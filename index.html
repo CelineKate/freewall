@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Freewall : Creating dynamic grid layout without gaps." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Freewall</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/kombai/freewall">View on GitHub</a>
+
+          <h1 id="project_title">Freewall</h1>
+          <h2 id="project_tagline">Creating dynamic grid layout without gaps.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/kombai/freewall/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/kombai/freewall/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>&lt;!DOCTYPE html&gt;
+
+    </p>
+         Freewall <pre><code>    &lt;link rel="stylesheet" type="text/css" href="css/style.css" /&gt;
+    &lt;script type="text/javascript" src="js/jquery-1.7.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="js/freewall.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="js/demo.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript"&gt;
+        $(function() {
+            app.setup({
+                color: 1,
+                layout: 1,
+                options: 1,
+                events: 1,
+                methods: 1,
+                filter: 1,
+                fitHeight: 1,
+                share: 1,
+                layoutFlex: 1,
+                layoutGrid: 1,
+                layoutImage: 1,
+                layoutPinterest: 1
+            });
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class='header'&gt;
+        &lt;div class="clearfix"&gt;
+            &lt;div class="float-left"&gt;
+                    &lt;h1&gt;&lt;a href="http://vnjs.net/www/project/freewall/"&gt;Free Wall&lt;/a&gt;&lt;/h1&gt;
+                    &lt;div class='target'&gt;Creating dynamic grid layouts without gaps.&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;ul class="float-right reponsive-block"&gt;
+                &lt;li&gt;&lt;a class="desktop active" data-width="96%"&gt;&lt;/a&gt;&lt;/li&gt; 
+                &lt;li&gt;&lt;a class="tablet-landscape" data-width="1024"&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a class="tablet-portrait" data-width="768"&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a class="iphone-landscape" data-width="960"&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a class="iphone-portrait" data-width="640"&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;   
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="freewall" class="free-wall"&gt;
+        &lt;div class="brick size33 block-fixed"&gt; 
+            &lt;div class='cover'&gt;
+                &lt;h2&gt; How it works &lt;/h2&gt;
+                &lt;p&gt;
+                    Based on the width (or height) of a container and the width (height) of a cell unit, It will create a virtual matrix. Scaning the matrix at each cell will find a free cell around to made a free area, then try to fit a block element into it. In case no block can fit the gap, it will resize the block to fill the gap (that is one of the options).
+                &lt;/p&gt;
+                &lt;h3&gt;Some example layouts:&lt;/h3&gt;
+                &lt;ul class="img-demo"&gt;
+                    &lt;li&gt;
+                        &lt;a href="javascript:void(0);" class="flex-image"&gt;&lt;/a&gt;
+                        &lt;a href="javascript:void(0);"&gt;Flex layout&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;a href="javascript:void(0);" class="grid-image"&gt;&lt;/a&gt;
+                        &lt;a href="javascript:void(0);"&gt;Grid layout&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;a href="javascript:void(0);" class="images-image"&gt;&lt;/a&gt;
+                        &lt;a href="javascript:void(0);"&gt;Images layout&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;a href="javascript:void(0);" class="pinterest-image"&gt;&lt;/a&gt;
+                        &lt;a href="javascript:void(0);"&gt;Pinterest layout&lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="brick size35 block-fixed"&gt;
+            &lt;div class='cover'&gt; 
+                &lt;h2&gt;Getting started&lt;/h2&gt;
+                &lt;div&gt;
+                    &lt;p&gt; Freewall requires jQuery framework.  It requires browsers whichs support CSS3 for some nice animation effects.&lt;/p&gt;
+                    &lt;pre&gt;
+                        &lt;code&gt;
+                            &amp;lt;!DOCTYPE html&amp;gt;
+                            &amp;lt;html&amp;gt;
+                            &amp;lt;head&amp;gt;
+                              &amp;lt;title&amp;gt; freewall demo getting started&amp;lt;/title&amp;gt;
+                              &amp;lt;script src="js/jquery-1.7.min.js"&amp;gt;&amp;lt;/script&amp;gt;
+                              &amp;lt;script src="js/freewall.js"&amp;gt;&amp;lt;/script&amp;gt;
+                              &amp;lt;style type="text/css"&amp;gt;
+                                #container {
+                                  width: 80%;
+                                  margin: auto;
+                                }
+                                .item {
+                                  background: rgb(135, 199, 135);
+                                  width: 320px;
+                                  height: 320px;
+                                }
+                              &amp;lt;/style&amp;gt;
+                            &amp;lt;/head&amp;gt;
+                            &amp;lt;body&amp;gt;
+                              &amp;lt;ul id="container"&amp;gt;
+                                &amp;lt;li class="item"&amp;gt;&amp;lt;/li&amp;gt;
+                                &amp;lt;li class="item"&amp;gt;&amp;lt;/li&amp;gt;
+                                &amp;lt;li class="item"&amp;gt;&amp;lt;/li&amp;gt;
+                                &amp;lt;li class="item"&amp;gt;&amp;lt;/li&amp;gt;
+                                &amp;lt;li class="item"&amp;gt;&amp;lt;/li&amp;gt;
+                                &amp;lt;li class="item"&amp;gt;&amp;lt;/li&amp;gt;
+                                &amp;lt;li class="item"&amp;gt;&amp;lt;/li&amp;gt;
+                              &amp;lt;/ul&amp;gt;
+                              &amp;lt;script&amp;gt;
+                                $(function() {
+                                  var wall = new freewall("#container");
+                                  wall.fitWidth();
+                                });
+                              &amp;lt;/script&amp;gt;
+                            &amp;lt;/body&amp;gt;
+                            &amp;lt;/html&amp;gt;
+                        &lt;/code&gt;
+                    &lt;/pre&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="brick size22 options"&gt;
+            &lt;div class='cover'&gt;
+                &lt;div class='float-left'&gt;
+                    &lt;h2&gt;Options&lt;/h2&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt; animate &lt;/li&gt;
+                        &lt;li&gt; block &lt;/li&gt;
+                        &lt;li&gt; cell &lt;/li&gt;
+                        &lt;li&gt; fillGap &lt;/li&gt;
+                        &lt;li&gt; gutter &lt;/li&gt;
+                        &lt;li&gt; selector &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class='desc'&gt;
+                    &lt;h2&gt;
+                        &lt;span&gt;Options&lt;/span&gt;
+                        &lt;a href="javascript:void(0);" class="float-right back-icon"&gt;&lt;/a&gt;
+                    &lt;/h2&gt;
+                    &lt;h3&gt;All options are parameters of Reset method&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;
+                            &lt;h3&gt; animate : boolean &lt;/h3&gt;
+                            &lt;div&gt; True to make block move with animation&lt;/div&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;h3&gt; block.flex : boolean &lt;/h3&gt;
+                            &lt;div&gt; True to made block can resize a bit to fit&lt;/div&gt;
+                            &lt;div&gt; False of block has class 'fixed' to keep size of block can't change&lt;/div&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;h3&gt; cell.width : number &lt;/h3&gt;
+                            &lt;div&gt; The width of unit, base on it will build grid container.&lt;/div&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;h3&gt; cell.height : number &lt;/h3&gt;
+                            &lt;div&gt; The height of unit, base on it will build grid container.&lt;/div&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;h3&gt; fillGap : boolean &lt;/h3&gt;
+                            &lt;div&gt; True will made layout without gap.&lt;/div&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;h3&gt; gutter : mixed &lt;/h3&gt;
+                            &lt;div&gt; The spacing between the blocks. Default is number, but can set it with 'auto' value.&lt;/div&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;h3&gt; selector : string &lt;/h3&gt;
+                            &lt;div&gt; Get all blocks to made layout&lt;/div&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;h3&gt; Example &lt;/h3&gt;
+                            &lt;pre&gt;
+                            &lt;code&gt;
+                                var wall = new freewall('.free-wall');
+                                wall.reset({
+                                  selector: '.brick',
+                                  animate: true,
+                                  block: {
+                                    flex: true
+                                  },
+                                  cell: {
+                                    width: 150,
+                                    height: 150
+                                  },
+                                  fillGap: false
+                                });
+                            &lt;/code&gt;
+                            &lt;/pre&gt;
+                        &lt;/li&gt;   
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="brick size11 events"&gt;
+            &lt;div class='cover'&gt;
+                &lt;div class='float-left'&gt;
+                    &lt;h2&gt;Events&lt;/h2&gt;
+                    &lt;div class='float-left'&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt; onResize &lt;/li&gt;
+                            &lt;li&gt; onSetBlock &lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class='desc'&gt;
+                    &lt;h2&gt;
+                        &lt;span&gt;Events&lt;/span&gt;
+                        &lt;a href="javascript:void(0);" class="float-right back-icon"&gt;&lt;/a&gt;
+                    &lt;/h2&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;
+                            &lt;h3&gt; onResize &lt;/h3&gt;
+                            &lt;div&gt; Registry callback when browser resize.&lt;/div&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;h3&gt; Example &lt;/h3&gt;
+                            &lt;pre&gt;
+                            &lt;code&gt;
+                                var wall = new freewall('.free-wall');
+                                wall.reset({
+                                  selector: '.brick',
+                                  onResize: function() {
+                                    this.fitWidth();
+                                  }
+                                });
+                            &lt;/code&gt;
+                            &lt;/pre&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;h3&gt; onSetBlock &lt;/h3&gt;
+                            &lt;div&gt; Registry callback when arrange block.&lt;/div&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="brick size22 methods"&gt;
+            &lt;div class='cover'&gt;
+                &lt;div class='float-left'&gt;
+                    &lt;h2&gt;Methods&lt;/h2&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt; fitHeight &lt;/li&gt;
+                        &lt;li&gt; fitWidth &lt;/li&gt;
+                        &lt;li&gt; fitZone &lt;/li&gt;
+                        &lt;li&gt; fixSize &lt;/li&gt;
+                        &lt;li&gt; reset &lt;/li&gt;
+                        &lt;li&gt; setFilter &lt;/li&gt;
+                        &lt;li&gt; unsetFilter &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class='desc'&gt;
+                    &lt;h2&gt;
+                        &lt;span&gt;Methods&lt;/span&gt;
+                        &lt;a href="javascript:void(0);" class="float-right back-icon"&gt;&lt;/a&gt;
+                    &lt;/h2&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;
+                            &lt;h3&gt; fitHeight(height) &lt;/h3&gt;
+                            &lt;div&gt; Made the layout fit with limit height&lt;/div&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;h3&gt; fitWidth(width) &lt;/h3&gt;
+                            &lt;div&gt; Made the layout fit with limit width&lt;/div&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;h3&gt; fitZone(width, height) &lt;/h3&gt;
+                            &lt;div&gt; Made the layout fit with limit width and height&lt;/div&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;h3&gt; fixSize(object) &lt;/h3&gt;
+                            &lt;div&gt; Set a block with special width or height&lt;/div&gt;
+                            &lt;h5&gt; Example &lt;/h5&gt;
+                            &lt;pre&gt;
+                            &lt;code&gt;
+                                var wall = new freewall('.free-wall');
+                                var dna = $(".free-wall .flex-layout");
+                                wall.unsetFilter();
+                                wall.fixSize({
+                                    block: dna,
+                                    width: 150,
+                                    height: 150
+                                });
+                                wall.fitWidth();
+                            &lt;/code&gt;
+                            &lt;/pre&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;h3&gt; reset(options) &lt;/h3&gt;
+                            &lt;div&gt; Config options for render layout.&lt;/div&gt;
+                            &lt;h5&gt; Example &lt;/h5&gt;
+                            &lt;pre&gt;
+                            &lt;code&gt;
+                                var ewall = new freewall(demo);
+                                var demo = $(".example");
+                                ewall.reset({
+                                  selector: '.cell',
+                                  animate: false,
+                                  block: {
+                                    flex: 1
+                                  },
+                                  cell: {
+                                    width: 150,
+                                    height: 150
+                                  },
+                                  fillGap: true
+                                });
+                                ewall.fitWidth(cwidth);
+                            &lt;/code&gt;
+                            &lt;/pre&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;h3&gt; setFilter(selector) &lt;/h3&gt;
+                            &lt;div&gt; Fillter blocks to show&lt;/div&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;h3&gt; unsetFilter() &lt;/h3&gt;
+                            &lt;div&gt; Made all block to show&lt;/div&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+
+
+        &lt;div class="brick size11 flex-layout"&gt; 
+            &lt;div class='cover'&gt;
+                &lt;div class="float-left"&gt;
+                    &lt;h2&gt;Example&lt;/h2&gt;
+                    &lt;div&gt; Flex layout &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class='desc'&gt;
+                    &lt;h2&gt;
+                        &lt;span&gt;Flex layout&lt;/span&gt;
+                        &lt;a href="javascript:void(0);" class="float-right back-icon"&gt;&lt;/a&gt;
+                    &lt;/h2&gt;
+                    &lt;pre&gt;
+                        &lt;code&gt;
+                            var ewall = new freewall(demo);
+                            ewall.reset({
+                              selector: '.cell',
+                              animate: false,
+                              block: {
+                                flex: 1
+                              },
+                              cell: {
+                                width: 150,
+                                height: 150
+                              },
+                              fillGap: true
+                            });
+                            ewall.fitWidth(cwidth);
+                        &lt;/code&gt;
+                    &lt;/pre&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="brick size11 grid-layout"&gt; 
+            &lt;div class='cover'&gt;
+                &lt;div class="float-left"&gt;
+                    &lt;h2&gt;Example &lt;/h2&gt;
+                    &lt;div&gt;Grid layout&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class='desc'&gt;
+                    &lt;h2&gt;
+                        &lt;span&gt;Grid layout&lt;/span&gt;
+                        &lt;a href="javascript:void(0);" class="float-right back-icon"&gt;&lt;/a&gt;
+                    &lt;/h2&gt;
+                    &lt;pre&gt;
+                        &lt;code&gt;
+                            var ewall = new freewall(demo);
+                            ewall.reset({
+                              selector: '.cell',
+                              animate: false,
+                              block: {
+                                flex: 1
+                              },
+                              cell: {
+                                width: 180,
+                                height: 180
+                              },
+                              fillGap: false
+                            });
+                            ewall.fitWidth(cwidth);
+                        &lt;/code&gt;
+                    &lt;/pre&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="brick size11 image-layout"&gt; 
+            &lt;div class='cover'&gt; 
+                &lt;div class="float-left"&gt;
+                    &lt;h2&gt;Example &lt;/h2&gt;
+                    &lt;div&gt;Image layout&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class='desc'&gt;
+                    &lt;h2&gt;
+                        &lt;span&gt;Image layout&lt;/span&gt;
+                        &lt;a href="javascript:void(0);" class="float-right back-icon"&gt;&lt;/a&gt;
+                    &lt;/h2&gt;
+                    &lt;pre&gt;
+                        &lt;code&gt;
+                            var ewall = new freewall(demo);
+                            ewall.reset({
+                              selector: '.cell',
+                              animate: false,
+                              block: {
+                                flex: true
+                              },
+                              cell: {
+                                width: 30,
+                                height: 150
+                              },
+                              fillGap: 1
+                            });
+                            ewall.fitWidth(cwidth);
+                        &lt;/code&gt;
+                    &lt;/pre&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="brick size11 pinterest-layout"&gt; 
+            &lt;div class='cover'&gt;
+                &lt;div class="float-left"&gt;
+                    &lt;h2&gt;Example &lt;/h2&gt;
+                    &lt;div&gt;Like Pinterest&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class='desc'&gt;
+                    &lt;h2&gt;
+                        &lt;span&gt;Like Pinterest layout&lt;/span&gt;
+                        &lt;a href="javascript:void(0);" class="float-right back-icon"&gt;&lt;/a&gt;
+                    &lt;/h2&gt;
+                    &lt;pre&gt;
+                        &lt;code&gt;
+                            var ewall = new freewall(demo);
+                            ewall.reset({
+                              selector: '.cell',
+                              animate: false,
+                              block: {
+                                flex: 1
+                              },
+                              cell: {
+                                width: 120,
+                                height: 10
+                              },
+                              gutter: 'auto',
+                              fillGap: false
+                            });
+                            ewall.fitWidth(cwidth);
+                        &lt;/code&gt;
+                    &lt;/pre&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="brick size11 fit-height"&gt;
+            &lt;div class='cover'&gt;
+                &lt;div class="float-left"&gt;
+                    &lt;h2&gt;Demo&lt;/h2&gt;
+                    &lt;div&gt; Fit height &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class='desc'&gt;
+                    &lt;h2&gt;
+                        &lt;span&gt;Fit height&lt;/span&gt;
+                        &lt;a href="javascript:void(0);" class="float-right back-icon"&gt;&lt;/a&gt;
+                    &lt;/h2&gt;
+                    &lt;pre&gt;
+                        &lt;code&gt;
+                            new freewall('.free-wall')
+                            .fitHeight(320);
+                        &lt;/code&gt;
+                    &lt;/pre&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="brick size11 filter"&gt;
+            &lt;div class='cover'&gt;
+                &lt;div class="float-left"&gt;
+                    &lt;h2&gt; Demo &lt;/h2&gt;
+                    &lt;div&gt; Filter &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class='desc'&gt;
+                    &lt;h2&gt;
+                        &lt;span&gt;Filter&lt;/span&gt;
+                        &lt;a href="javascript:void(0);" class="float-right back-icon"&gt;&lt;/a&gt;
+                    &lt;/h2&gt;
+                    &lt;pre&gt;
+                        &lt;code&gt;
+                            new freewall('.free-wall')
+                            .setFilter('.size22, .size11')
+                            .fitWidth();
+                        &lt;/code&gt;
+                    &lt;/pre&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="brick size21"&gt;
+            &lt;div class='cover'&gt;
+                &lt;h2&gt;Download&lt;/h2&gt;
+                &lt;a href='https://github.com/kombai/freewall/archive/master.zip' target='_blank' class="download-icon"&gt;Project&lt;/a&gt;
+                &lt;a href='https://raw.github.com/kombai/freewall/master/js/freewall.js' target='_blank' class="js-icon"&gt;Freewall.js&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="brick size11"&gt;
+            &lt;div class='cover'&gt;
+                &lt;a href='https://github.com/kombai/freewall' target="_blank"&gt;
+                    &lt;h2&gt;Fork&lt;/h2&gt;
+                    &lt;span class="githud"&gt;on Github&lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="brick size12"&gt;
+            &lt;div class='cover'&gt;
+                &lt;h2&gt;Share&lt;/h2&gt;
+                &lt;div class="facebook-share"&gt;Facebook&lt;/div&gt;
+                &lt;div class="google-share"&gt;Google +&lt;/div&gt;
+                &lt;div class="twitter-share"&gt;Twitter&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="brick example"&gt;&lt;/div&gt;
+
+        &lt;div class="brick size21"&gt;
+            &lt;div class='cover'&gt;
+                &lt;h2&gt;Copyright&lt;/h2&gt;
+                &lt;p&gt; © 2013 Minh Nguyen &lt;/p&gt;
+                &lt;p&gt; Released under the MIT license&lt;/p&gt;
+            &lt;/div&gt;  
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/body&gt;
+</code></pre>
+
+<p></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Freewall maintained by <a href="https://github.com/kombai">kombai</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-44036587-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
